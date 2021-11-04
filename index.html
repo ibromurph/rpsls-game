@@ -11,16 +11,15 @@
 <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-
     <section data-section="menu" class="page">
         <h1 class="page__title">Welcome to Rock, Paper, Scissors, Lizard, Spock</h1>
         <div class="page__buttons">
-            <a href="https://www.youtube.com/watch?v=pIpmITBocfM" target="_blank"><button class="btn">About the game</button></a>
+            <a href="https://www.youtube.com/watch?v=pIpmITBocfM" class="btn" target="_blank">About the game</a>
             <button class="btn">Play the game</button>
         </div>
     </section>
 
-   <section data-section="game" class="page hidden">
+   <main data-section="game" class="page hidden">
          <header class="page__header">
              <img src="assets/images/logo-bonus.svg" alt="Title header of the game" class="logo">
              <div class="score-container">
@@ -28,37 +27,46 @@
                 <span id="score" class="score">0</span>
              </div>
          </header>
-         <main class="page__content" data-section="selection">
+         <section class="page__content" data-section="selection">
             <div class="icons-background">
-            <div data-selection="rock" class="icon icon--rock"><img src="./assets/images/icon-rock.svg"></div>
-            <div data-selection="paper" class="icon icon--paper"><img src="./assets/images/icon-paper.svg"></div>
-            <div data-selection="scissors" class="icon icon--scissors"><img src="./assets/images/icon-scissors.svg"></div>
-            <div data-selection="lizard" class="icon icon--lizard"><img src="./assets/images/icon-lizard.svg"></div>
-            <div data-selection="spock" class="icon icon--spock"><img src="./assets/images/icon-spock.svg"></div>
+            <div data-selection="rock" class="icon icon--rock"><img src="./assets/images/icon-rock.svg" alt="rock image icon"></div>
+            <div data-selection="paper" class="icon icon--paper"><img src="./assets/images/icon-paper.svg" alt="paper image icon"></div>
+            <div data-selection="scissors" class="icon icon--scissors"><img src="./assets/images/icon-scissors.svg" alt="scissors image icon"></div>
+            <div data-selection="lizard" class="icon icon--lizard"><img src="./assets/images/icon-lizard.svg" alt="lizard image icon"></div>
+            <div data-selection="spock" class="icon icon--spock"><img src="./assets/images/icon-spock.svg" alt="spock image icon"></div>
             </div>
-         </main>
-         <main class="page__content hidden" data-section="decision">
+         </section>
+         
+         <section class="page__content hidden" data-section="decision">
             <div class="selection">
                 <h3 class="selection__title">YOU PICKED</h3>
-                <div class="icon icon--rock selection__icon"><img src="./assets/images/icon-rock.svg" alt=""></div>
+                <h2 class="icon icon--rock selection__icon"><img src="./assets/images/icon-rock.svg" alt=""></h2>
             </div>
+
             <div class="result">
-                <div class="result">
-                    <h2 class="result__title">YOU LOSE</h2>
-                    <button class="btn btn--filled">PLAY AGAIN</button>
-                  </div>
-                  <div class="selection">
-                    <h3 class="selection__title">THE HOUSE PICKED</h3>
-                    <div class="icon icon--rock selection__icon"><img src="./assets/images/icon-rock.svg" alt=""></div>
-                  </div>
-         </main>
+                <p class="result__title">YOU LOSE</p>
+                <button class="btn btn--filled">PLAY AGAIN</button>
+            </div>
+            
+            <div class="selection">
+                <h3 class="selection__title">THE HOUSE PICKED</h3>
+                 <div class="icon icon--rock selection__icon"><img src="./assets/images/icon-rock.svg" alt=""></div>
+            </div>
+         </section>
+         <button class="btn btn--rules" data-button="rules">RULES</button>
+   </main>
+
+
+    <section data-section="rules" class="modal-overlay">
+    <div class="modal">
+        <h2 class="modal__title">RULES</h2>
+        <button class="modal__close" data-button="close">
+            <img src="/assets/images/icon-close.svg" alt="close window">
+        </button>
+        <img class="modal__content" src="./assets/images/image-rules-bonus.svg" alt="The rules of the game">
+    </div>
     </section>
 
-
-    <section data-section="rules">RULES</section>
-
     <script src="./assets/js/game.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </body>
 </html>
