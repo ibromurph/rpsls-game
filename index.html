@@ -1,4 +1,4 @@
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -10,13 +10,12 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 <link rel="stylesheet" href="assets/css/style.css">
 </head>
-
 <body>
 
     <section data-section="menu" class="page">
         <h1 class="page__title">Welcome to Rock, Paper, Scissors, Lizard, Spock</h1>
         <div class="page__buttons">
-            <a href="https://www.youtube.com/watch?v=pIpmITBocfM" class="btn" target="_blank">About the game</button>
+            <a href="https://www.youtube.com/watch?v=pIpmITBocfM" target="_blank"><button class="btn">About the game</button></a>
             <button class="btn">Play the game</button>
         </div>
     </section>
@@ -38,11 +37,28 @@
             <div data-selection="spock" class="icon icon--spock"><img src="./assets/images/icon-spock.svg"></div>
             </div>
          </main>
+         <main class="page__content hidden" data-section="decision">
+            <div class="selection">
+                <h3 class="selection__title">YOU PICKED</h3>
+                <div class="icon icon--rock selection__icon"><img src="./assets/images/icon-rock.svg" alt=""></div>
+            </div>
+            <div class="result">
+                <div class="result">
+                    <h2 class="result__title">YOU LOSE</h2>
+                    <button class="btn btn--filled">PLAY AGAIN</button>
+                  </div>
+                  <div class="selection">
+                    <h3 class="selection__title">THE HOUSE PICKED</h3>
+                    <div class="icon icon--rock selection__icon"><img src="./assets/images/icon-rock.svg" alt=""></div>
+                  </div>
+         </main>
     </section>
+
+
     <section data-section="rules">RULES</section>
 
-<script src="./assets/js/game.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="./assets/js/game.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </body>
 </html>
