@@ -4,11 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
-<meta name="Description" content="A web application game based around the popular game Rock, Paper, Scissor"/>
+<meta name="description" content="A web application game based around the popular game Rock, Paper, Scissor"/>
+<meta name="keywords" content="Rock, Paper, Scissors, Lizard, Spock">
 <title>Rock Paper Scissors Lizard Spock</title>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="shortcut icon" href="/assets/images/favicon-32x32.png" type="image/x-icon">
 </head>
 <body>
     <section data-section="menu" class="page">
@@ -38,26 +38,30 @@
          </section>
          
          <section class="page__content hidden" data-section="decision">
+            <div class="result-container">
             <div class="selection">
-                <h3 class="selection__title">YOU PICKED</h3>
-                <h2 class="icon icon--rock selection__icon"><img src="./assets/images/icon-rock.svg" alt=""></h2>
+                <h3 class="selection__title" data-player="user">YOU PICKED</h3>
+                    <div class="icon selection__icon">
+                        <img src="./assets/images/icon-rock.svg" alt=""></h2>
+                    </div>
             </div>
-
             <div class="result">
-                <p class="result__title">YOU LOSE</p>
+                <h2 class="result__title">YOU LOSE</h2>
                 <button class="btn btn--filled">PLAY AGAIN</button>
             </div>
             
             <div class="selection">
-                <h3 class="selection__title">THE HOUSE PICKED</h3>
-                 <div class="icon icon--rock selection__icon"><img src="./assets/images/icon-rock.svg" alt=""></div>
+                <h3 class="selection__title" data-player="computer">THE HOUSE PICKED</h3>
+                 <div class="icon icon--rock selection__icon selection--opponent">
+                     <img src="./assets/images/icon-rock.svg" alt="">
+                </div>
             </div>
          </section>
          <button class="btn btn--rules" data-button="rules">RULES</button>
    </main>
 
 
-    <section data-section="rules" class="modal-overlay">
+    <section data-section="rules" class="modal-overlay hidden">
     <div class="modal">
         <h2 class="modal__title">RULES</h2>
         <button class="modal__close" data-button="close">
