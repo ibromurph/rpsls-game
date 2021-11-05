@@ -7,3 +7,7 @@ body {
   background: radial-gradient(hsl(214, 47%, 23%), hsl(237, 49%, 15%));
 }
 
+/* KEEP ALWAYS AT THE BOTTOM - CLASS TO HIDE ELEMENTS */
+.hidden {
+  display: none !important;
+}

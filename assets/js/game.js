@@ -11,6 +11,8 @@ const playAgainButton = document.querySelector('[data-button="play-again"]');
 
 const resultText = document.querySelector('[data-text="result"]'); 
 
+const icons = document.querySelectorAll('[data-selection]');
+
 const sections = {
     menu: document.querySelector('[data-section="menu"]'),
     game: document.querySelector('[data-section="game"]'),
@@ -21,6 +23,18 @@ const sections = {
 
 // EVENT LISTENERS
 startButton.addEventListener('click', startGame);
+
+rulesButton.addEventListener('click', () => sections.rules.classList.remove('hidden'));
+closeButton.addEventListener('click', () => sections.rules.classList.add('hidden'));
+sections.rules.addEventListener('click', e => {
+  if(e.target.classList.contains('modal-overlay'))
+    sections.rules.classList.add('hidden')
+});
+
+icons.forEach(icon => icon.addEventListener('click', () => {
+  sections.selection.classList.add('hidden');
+  sections.decision.classList.remove('hidden');
+}))
 
 // FUNCTIONS
 function startGame(){
