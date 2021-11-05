@@ -15,16 +15,16 @@
         <h1 class="page__title">Welcome to Rock, Paper, Scissors, Lizard, Spock</h1>
         <div class="page__buttons">
             <a href="https://www.youtube.com/watch?v=pIpmITBocfM" class="btn" target="_blank">About the game</a>
-            <button class="btn">Play the game</button>
+            <button class="btn" data-button="start">Play the game</button>
         </div>
     </section>
 
    <main data-section="game" class="page hidden">
          <header class="page__header">
-             <img src="assets/images/logo-bonus.svg" alt="Title header of the game" class="logo">
+             <img src="assets/images/logo-bonus.svg" alt="The logo of the game" class="page__logo">
              <div class="score-container">
                  <div class="score-text">SCORE</div>
-                <span id="score" class="score">0</span>
+                <span id="score" class="score" data-text="score">0</span>
              </div>
          </header>
          <section class="page__content" data-section="selection">
@@ -40,19 +40,19 @@
          <section class="page__content hidden" data-section="decision">
             <div class="result-container">
             <div class="selection">
-                <h3 class="selection__title" data-player="user">YOU PICKED</h3>
-                    <div class="icon selection__icon">
+                <h3 class="selection__title">YOU PICKED</h3>
+                    <div class="icon selection__icon" data-player="user">
                         <img src="./assets/images/icon-rock.svg" alt=""></h2>
                     </div>
             </div>
             <div class="result">
-                <h2 class="result__title">YOU LOSE</h2>
-                <button class="btn btn--filled">PLAY AGAIN</button>
+                <h2 class="result__title" data-text="result">YOU LOSE</h2>
+                <button class="btn btn--filled" data-button="play-again">PLAY AGAIN</button>
             </div>
             
             <div class="selection">
-                <h3 class="selection__title" data-player="computer">THE HOUSE PICKED</h3>
-                 <div class="icon icon--rock selection__icon selection--opponent">
+                <h3 class="selection__title">THE HOUSE PICKED</h3>
+                 <div class="icon icon--rock selection__icon selection--opponent" data-player="computer">
                      <img src="./assets/images/icon-rock.svg" alt="">
                 </div>
             </div>
@@ -67,10 +67,10 @@
         <button class="modal__close" data-button="close">
             <img src="/assets/images/icon-close.svg" alt="close window">
         </button>
-        <img class="modal__content" src="./assets/images/image-rules-bonus.svg" alt="The rules of the game">
+        <img class="modal__content" src="/assets/images/image-rules-bonus.svg" alt="The rules of the game">
     </div>
     </section>
 
-    <script src="./assets/js/game.js"></script>
+    <script src="/assets/js/game.js"></script>
 </body>
 </html>
