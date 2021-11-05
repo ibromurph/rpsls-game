@@ -20,6 +20,10 @@ const sections = {
   }
 
 // EVENT LISTENERS
-
+startButton.addEventListener('click', startGame);
 
 // FUNCTIONS
+function startGame(){
+    sections.menu.classList.add('hidden');
+    sections.game.classList.remove('hidden');
+  }
