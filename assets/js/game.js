@@ -23,6 +23,7 @@ const sections = {
 
 // EVENT LISTENERS
 startButton.addEventListener('click', startGame);
+playAgainButton.addEventListener('click', resetGame)
 
 rulesButton.addEventListener('click', () => sections.rules.classList.remove('hidden'));
 closeButton.addEventListener('click', () => sections.rules.classList.add('hidden'));
@@ -41,3 +42,11 @@ function startGame(){
     sections.menu.classList.add('hidden');
     sections.game.classList.remove('hidden');
   }
+
+
+function resetGame(){
+  sections.decision.classList.add('hidden');
+  sections.selection.classList.remove('hidden');
+  user.reset();
+  computer.reset();
+}
