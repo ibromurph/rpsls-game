@@ -1,5 +1,15 @@
 // GLOBAL CONSTANTS
 
+// stores each possible outcome of the game | 1 = win, 0 = lose, 0.5 = tie
+// ex. rock against scissors = 1 -> win for the rock
+const RESULT_OPTIONS = {
+  rock: {scissors: 1, lizard: 1, rock: 0.5, paper: 0, spock: 0},
+  paper: {rock: 1, spock: 1, paper: 0.5, scissors: 0, lizard: 0},
+  scissors: {paper: 1, lizard: 1, scissors: 0.5, rock: 0, spock: 0},
+  lizard: {spock: 1, paper: 1, lizard: 0.5, rock: 0, scissors: 0},
+  spock: {scissors: 1, rock: 1, spock: 0.5, paper: 0, lizard: 0}
+};
+
 // GLOBAL VARIABLES
 let score = 0
 
@@ -47,6 +57,4 @@ function startGame(){
 function resetGame(){
   sections.decision.classList.add('hidden');
   sections.selection.classList.remove('hidden');
-  user.reset();
-  computer.reset();
 }
