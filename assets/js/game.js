@@ -1,7 +1,7 @@
 // GLOBAL CONSTANTS -------------------------------------------------------- //
 const IMAGE_BASE_PATH = "./assets/images/";
 
-// Stores each possible outcome of the game | 1 = win, 0 = lose, 0.5 = draw
+// Stores each possible outcome of the game | 1 = win, 0 = lose, 0.5 = tie
 // ex. rock against scissors = 1 -> win for the rock
 const RESULT_OPTIONS = {
   rock: {scissors: 1, lizard: 1, rock: 0.5, paper: 0, spock: 0},
@@ -14,10 +14,21 @@ const RESULT_OPTIONS = {
 const RESULT_TEXTS = {
   win: 'You win!',
   lose: 'You lose!',
-  tie: 'Draw!'
+  tie: 'Tie!'
 };
 
 // GLOBAL OBJECTS/CLASSES
+
+const scoreObj = {
+  score: 0, 
+  span: document.querySelector('[data-text="score"]'),
+  // function which updates the score based on the passed difference
+  update(scoreDifference) {
+    this.score += scoreDifference;
+    this.span.innerText = this.score;
+  }
+};
+
 
 class Player { 
   constructor(identifier){
@@ -79,6 +90,7 @@ icons.forEach(icon => icon.addEventListener('click', () => {
   sections.decision.classList.remove('hidden');
   user.select(icon);
   makeComputerSelection();
+  decideWinner();
 }))
 
 // FUNCTIONS
@@ -97,4 +109,24 @@ function makeComputerSelection(){
   const randomIndex = Math.floor(Math.random() * icons.length);
   const randomSelection = icons[randomIndex];
   computer.select(randomSelection);
+}
+
+function decideWinner(){
+  user.resultScore = RESULT_OPTIONS[user.selection][computer.selection];
+
+  if(user.resultScore == 1){
+    scoreObj.update(1);
+    user.winner = true;
+    resultText.innerText = RESULT_TEXTS.win;
+  } 
+  else if(user.resultScore == 0){
+    scoreObj.update(-1);
+    computer.winner = true;
+    resultText.innerText = RESULT_TEXTS.lose;
+  }
+  else {
+    resultText.innerText = RESULT_TEXTS.tie;
+  }
+  user.update();
+  computer.update();
 }
