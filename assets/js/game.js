@@ -27,7 +27,7 @@ class Player {
     this.selectionImage = this.container.querySelector('img');
   }
 
-  // makes the player select an icon
+  // Player select an icon
   select(icon){
     this.selection = icon.dataset.selection;
   }
@@ -38,7 +38,6 @@ class Player {
     this.selectionImage.src = `${IMAGE_BASE_PATH}/icon-${this.selection}.svg`;
   }
 }
-
 
 // Creates a player instance for the user and computer
 const user = new Player('user');
@@ -79,6 +78,7 @@ icons.forEach(icon => icon.addEventListener('click', () => {
   sections.selection.classList.add('hidden');
   sections.decision.classList.remove('hidden');
   user.select(icon);
+  makeComputerSelection();
 }))
 
 // FUNCTIONS
@@ -90,4 +90,11 @@ function startGame(){
 function resetGame(){
   sections.decision.classList.add('hidden');
   sections.selection.classList.remove('hidden');
+}
+
+// a random icon is selected from the icons array and stored in the computer object
+function makeComputerSelection(){
+  const randomIndex = Math.floor(Math.random() * icons.length);
+  const randomSelection = icons[randomIndex];
+  computer.select(randomSelection);
 }
