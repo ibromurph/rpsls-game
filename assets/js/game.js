@@ -18,7 +18,6 @@ const RESULT_TEXTS = {
 };
 
 // GLOBAL OBJECTS/CLASSES
-
 const scoreObj = {
   score: 0, 
   span: document.querySelector('[data-text="score"]'),
@@ -106,12 +105,6 @@ function startGame(){
     sections.game.classList.remove('hidden');
   }
 
-function resetGame(){
-  sections.decision.classList.add('hidden');
-  sections.selection.classList.remove('hidden');
-  user.reset();
-  computer.reset();
-}
 
 // a random icon is selected from the icons array and stored in the computer object
 function makeComputerSelection(){
@@ -138,4 +131,12 @@ function decideWinner(){
   }
   user.update();
   computer.update();
+}
+
+// resets the game to it's initial state where the player can pick a new icon
+function resetGame(){
+  sections.decision.classList.add('hidden');
+  sections.selection.classList.remove('hidden');
+  user.reset();
+  computer.reset();
 }
