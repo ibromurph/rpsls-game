@@ -62,6 +62,7 @@ class Player {
   }
 }
 
+// creates a player instance for the user and computer
 const user = new Player('user');
 const computer = new Player('computer');
 
