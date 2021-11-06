@@ -1,7 +1,24 @@
+// GLOBAL CONSTANTS -------------------------------------------------------- //
+const IMAGE_BASE_PATH = "./assets/images/";
+
+// Stores each possible outcome of the game | 1 = win, 0 = lose, 0.5 = draw
+// ex. rock against scissors = 1 -> win for the rock
+const RESULT_OPTIONS = {
+  rock: {scissors: 1, lizard: 1, rock: 0.5, paper: 0, spock: 0},
+  paper: {rock: 1, spock: 1, paper: 0.5, scissors: 0, lizard: 0},
+  scissors: {paper: 1, lizard: 1, scissors: 0.5, rock: 0, spock: 0},
+  lizard: {spock: 1, paper: 1, lizard: 0.5, rock: 0, scissors: 0},
+  spock: {scissors: 1, rock: 1, spock: 0.5, paper: 0, lizard: 0}
+};
+
+const RESULT_TEXTS = {
+  win: 'You win!',
+  lose: 'You lose!',
+  tie: 'Draw!'
+};
+
 // GLOBAL OBJECTS/CLASSES
 
-const user = new Player('user');
-const computer = new Player('computer');
 
 /*const user = {
   selection: null, 
@@ -32,27 +49,21 @@ class Player {
     this.container = document.querySelector(`[data-player="${identifier}"]`);
     this.selectionImage = this.container.querySelector('img');
   }
+
+  // makes the player select an icon
+  select(icon){
+    this.selection = icon.dataset.selection;
+  }
+  
+  // updates the UI based on the player's selection with the image and image classes
+  update(){
+    this.container.classList.add(`icon--${this.selection}`);
+    this.selectionImage.src = `${IMAGE_BASE_PATH}/icon-${this.selection}.svg`;
+  }
 }
 
-
-// Stores each possible outcome of the game | 1 = win, 0 = lose, 0.5 = draw
-// ex. rock against scissors = 1 -> win for the rock
-const RESULT_OPTIONS = {
-  rock: {scissors: 1, lizard: 1, rock: 0.5, paper: 0, spock: 0},
-  paper: {rock: 1, spock: 1, paper: 0.5, scissors: 0, lizard: 0},
-  scissors: {paper: 1, lizard: 1, scissors: 0.5, rock: 0, spock: 0},
-  lizard: {spock: 1, paper: 1, lizard: 0.5, rock: 0, scissors: 0},
-  spock: {scissors: 1, rock: 1, spock: 0.5, paper: 0, lizard: 0}
-};
-
-const RESULT_TEXTS = {
-  win: 'You win!',
-  lose: 'You lose!',
-  tie: 'Draw!'
-};
-
-// GLOBAL VARIABLES
-let score = 0
+const user = new Player('user');
+const computer = new Player('computer');
 
 // HTML SELECTORS
 const startButton = document.querySelector('[data-button="start"]');
