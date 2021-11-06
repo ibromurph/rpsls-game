@@ -47,6 +47,14 @@ class Player {
     this.container.classList.add(`icon--${this.selection}`);
     this.selectionImage.src = `${IMAGE_BASE_PATH}/icon-${this.selection}.svg`;
   }
+   // resets every logic element to it's initial state and removes the UI classnames
+   reset(){
+    this.container.classList.remove(`icon--${this.selection}`);
+    this.selection = null;
+    this.winner = false;
+    this.resultScore = null;
+    this.selectionImage.src = '';
+  }
 }
 
 // Creates a player instance for the user and computer
@@ -101,6 +109,8 @@ function startGame(){
 function resetGame(){
   sections.decision.classList.add('hidden');
   sections.selection.classList.remove('hidden');
+  user.reset();
+  computer.reset();
 }
 
 // a random icon is selected from the icons array and stored in the computer object
