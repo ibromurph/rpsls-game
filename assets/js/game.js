@@ -19,29 +19,6 @@ const RESULT_TEXTS = {
 
 // GLOBAL OBJECTS/CLASSES
 
-
-/*const user = {
-  selection: null, 
-  resultScore: null,
-  container: document.querySelector('[data-player="user"]'),
-  selectionImage: document.querySelector('[data-player="user"] img'),
-  update() {
-    this.container.classLigist.add(getIconClass(this.selection));
-    this.selectionImage.src = getIconSrc(this.selection);
-  }
-}
-
-const computer = {
-  selection: null, 
-  resultScore: null,
-  container: document.querySelector('[data-player="computer"]'),
-  selectionImage: document.querySelector('[data-player="computer"] img'),
-  update() {
-    this.container.classList.add(getIconClass(this.selection));
-    this.selectionImage.src = getIconSrc(this.selection);
-  }
-}*/
-
 class Player { 
   constructor(identifier){
     this.selection = null;
@@ -62,11 +39,13 @@ class Player {
   }
 }
 
-// creates a player instance for the user and computer
+
+// Creates a player instance for the user and computer
 const user = new Player('user');
 const computer = new Player('computer');
 
 // HTML SELECTORS
+// Select the buttons from the page
 const startButton = document.querySelector('[data-button="start"]');
 const rulesButton = document.querySelector('[data-button="rules"]');
 const closeButton = document.querySelector('[data-button="close"]');
@@ -74,15 +53,16 @@ const playAgainButton = document.querySelector('[data-button="play-again"]');
 
 const resultText = document.querySelector('[data-text="result"]'); 
 
-const icons = document.querySelectorAll('[data-selection]');
-
+// Object with all page sections selected from the HTML
 const sections = {
-    menu: document.querySelector('[data-section="menu"]'),
-    game: document.querySelector('[data-section="game"]'),
-    rules: document.querySelector('[data-section="rules"]'),
-    selection: document.querySelector('[data-section="selection"]'),
-    decision: document.querySelector('[data-section="decision"]'),
-  }
+  menu: document.querySelector('[data-section="menu"]'),
+  game: document.querySelector('[data-section="game"]'),
+  rules: document.querySelector('[data-section="rules"]'),
+  selection: document.querySelector('[data-section="selection"]'),
+  decision: document.querySelector('[data-section="decision"]'),
+}
+
+const icons = document.querySelectorAll('[data-selection]');
 
 // EVENT LISTENERS
 startButton.addEventListener('click', startGame);
@@ -98,6 +78,7 @@ sections.rules.addEventListener('click', e => {
 icons.forEach(icon => icon.addEventListener('click', () => {
   sections.selection.classList.add('hidden');
   sections.decision.classList.remove('hidden');
+  user.select(icon);
 }))
 
 // FUNCTIONS
