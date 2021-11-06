@@ -1,4 +1,26 @@
-// GLOBAL CONSTANTS
+// GLOBAL OBJECTS/CLASSES
+
+const user = {
+  selection: null, 
+  resultScore: null,
+  container: document.querySelector('[data-player="user"]'),
+  selectionImage: document.querySelector('[data-player="user"] img'),
+  update() {
+    this.container.classList.add(getIconClass(this.selection));
+    this.selectionImage.src = getIconSrc(this.selection);
+  }
+}
+
+const computer = {
+  selection: null, 
+  resultScore: null,
+  container: document.querySelector('[data-player="computer"]'),
+  selectionImage: document.querySelector('[data-player="computer"] img'),
+  update() {
+    this.container.classList.add(getIconClass(this.selection));
+    this.selectionImage.src = getIconSrc(this.selection);
+  }
+}
 
 // Stores each possible outcome of the game | 1 = win, 0 = lose, 0.5 = draw
 // ex. rock against scissors = 1 -> win for the rock
@@ -41,12 +63,12 @@ const sections = {
 startButton.addEventListener('click', startGame);
 playAgainButton.addEventListener('click', resetGame)
 
-rulesButton.addEventListener('click', sun);
+rulesButton.addEventListener('click', () => sections.rules.classList.remove('hidden'));
 closeButton.addEventListener('click', () => sections.rules.classList.add('hidden'));
 sections.rules.addEventListener('click', e => {
   if(e.target.classList.contains('modal-overlay'))
     sections.rules.classList.add('hidden')
-});
+  });
 
 icons.forEach(icon => icon.addEventListener('click', () => {
   sections.selection.classList.add('hidden');
@@ -58,11 +80,6 @@ function startGame(){
     sections.menu.classList.add('hidden');
     sections.game.classList.remove('hidden');
   }
-
-function sun()
-{
-  sections.rules.classList.remove('hidden')
-}
 
 function resetGame(){
   sections.decision.classList.add('hidden');
