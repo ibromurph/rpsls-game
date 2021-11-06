@@ -29,7 +29,6 @@ const scoreObj = {
   }
 };
 
-
 class Player { 
   constructor(identifier){
     this.selection = null;
