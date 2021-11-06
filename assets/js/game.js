@@ -1,6 +1,6 @@
 // GLOBAL CONSTANTS
 
-// stores each possible outcome of the game | 1 = win, 0 = lose, 0.5 = tie
+// Stores each possible outcome of the game | 1 = win, 0 = lose, 0.5 = draw
 // ex. rock against scissors = 1 -> win for the rock
 const RESULT_OPTIONS = {
   rock: {scissors: 1, lizard: 1, rock: 0.5, paper: 0, spock: 0},
@@ -8,6 +8,12 @@ const RESULT_OPTIONS = {
   scissors: {paper: 1, lizard: 1, scissors: 0.5, rock: 0, spock: 0},
   lizard: {spock: 1, paper: 1, lizard: 0.5, rock: 0, scissors: 0},
   spock: {scissors: 1, rock: 1, spock: 0.5, paper: 0, lizard: 0}
+};
+
+const RESULT_TEXTS = {
+  win: 'You win!',
+  lose: 'You lose!',
+  tie: 'Draw!'
 };
 
 // GLOBAL VARIABLES
@@ -35,7 +41,7 @@ const sections = {
 startButton.addEventListener('click', startGame);
 playAgainButton.addEventListener('click', resetGame)
 
-rulesButton.addEventListener('click', () => sections.rules.classList.remove('hidden'));
+rulesButton.addEventListener('click', sun);
 closeButton.addEventListener('click', () => sections.rules.classList.add('hidden'));
 sections.rules.addEventListener('click', e => {
   if(e.target.classList.contains('modal-overlay'))
@@ -53,6 +59,10 @@ function startGame(){
     sections.game.classList.remove('hidden');
   }
 
+function sun()
+{
+  sections.rules.classList.remove('hidden')
+}
 
 function resetGame(){
   sections.decision.classList.add('hidden');
