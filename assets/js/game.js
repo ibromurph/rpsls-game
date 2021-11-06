@@ -1,12 +1,12 @@
 // GLOBAL OBJECTS/CLASSES
 
-const user = {
+/*const user = {
   selection: null, 
   resultScore: null,
   container: document.querySelector('[data-player="user"]'),
   selectionImage: document.querySelector('[data-player="user"] img'),
   update() {
-    this.container.classList.add(getIconClass(this.selection));
+    this.container.classLigist.add(getIconClass(this.selection));
     this.selectionImage.src = getIconSrc(this.selection);
   }
 }
@@ -20,7 +20,17 @@ const computer = {
     this.container.classList.add(getIconClass(this.selection));
     this.selectionImage.src = getIconSrc(this.selection);
   }
+}*/
+
+class Player {
+  constructor(identifier){
+    this.selection = null;
+    this.resultScore = null;
+    this.container = document.querySelector(`[data-player="${identifier}"]`);
+    this.selectionImage = this.container.querySelector('img');
+  }
 }
+
 
 // Stores each possible outcome of the game | 1 = win, 0 = lose, 0.5 = draw
 // ex. rock against scissors = 1 -> win for the rock
@@ -61,7 +71,7 @@ const sections = {
 
 // EVENT LISTENERS
 startButton.addEventListener('click', startGame);
-playAgainButton.addEventListener('click', resetGame)
+playAgainButton.addEventListener('click', resetGame);
 
 rulesButton.addEventListener('click', () => sections.rules.classList.remove('hidden'));
 closeButton.addEventListener('click', () => sections.rules.classList.add('hidden'));
