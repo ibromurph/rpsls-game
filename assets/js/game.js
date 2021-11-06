@@ -1,5 +1,8 @@
 // GLOBAL OBJECTS/CLASSES
 
+const user = new Player('user');
+const computer = new Player('computer');
+
 /*const user = {
   selection: null, 
   resultScore: null,
@@ -22,7 +25,7 @@ const computer = {
   }
 }*/
 
-class Player {
+class Player { 
   constructor(identifier){
     this.selection = null;
     this.resultScore = null;
