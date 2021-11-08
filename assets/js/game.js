@@ -17,7 +17,6 @@ const RESULT_TEXTS = {
   lose: 'You lose!',
   tie: 'Tie!'
 };
-
 // GLOBAL OBJECTS/CLASSES
 const scoreObj = {
   score: 0, 
