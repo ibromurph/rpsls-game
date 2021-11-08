@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&display=swap');
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body {
   font-family: 'Barlow Semi Condensed', sans-serif;
   min-height: 100vh;
@@ -35,6 +41,20 @@ body {
 .page__buttons > .btn {
   margin-bottom: 30px;
 }
+
+.page__header {
+  max-width: 700px;
+  width: 100%;
+  border: 4px solid hsl(217, 16%, 45%);
+  border-radius: 17px;
+  padding: 15px;
+  height: 140px;
+  z-index: 10;
+  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+} 
 
 .btn {
   --background-color: transparent;
