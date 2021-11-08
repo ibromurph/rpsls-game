@@ -72,6 +72,30 @@ body {
   --size: 140px;
 }
 
+/* SCORE STYLES SECTION */
+.score-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 700px;
+  padding: 0 40px;
+  height: 100%;
+  border-radius: 7px;
+  background: hsl(0, 0%, 100%);
+}
+
+.score-text {
+  color: hsl(229, 64%, 46%);
+  font-size: 20px;
+  font-weight: 600;
+}
+.score {
+  font-size: 55px;
+  font-weight: 700;
+  color:hsl(229, 25%, 31%);
+}
+
 
 /* BUTTON STYLES */
 .btn {
