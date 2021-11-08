@@ -1,5 +1,6 @@
 // GLOBAL CONSTANTS -------------------------------------------------------- //
-const IMAGE_BASE_PATH = "./assets/images/";
+const IMAGE_BASE_PATH = "assets/images/";
+const ANIMATION_UPDATE_DELAY = 4000; // 4seconds due to the result animations
 
 // Stores each possible outcome of the game | 1 = win, 0 = lose, 0.5 = tie
 // ex. rock against scissors = 1 -> win for the rock
@@ -24,7 +25,10 @@ const scoreObj = {
   // function which updates the score based on the passed difference
   update(scoreDifference) {
     this.score += scoreDifference;
-    this.span.innerText = this.score;
+        // after the result animation is done, update the score in the page UI
+    setTimeout(() => {
+      this.span.innerText = this.score;
+    }, ANIMATION_UPDATE_DELAY);
   }
 };
 
@@ -36,7 +40,7 @@ class Player {
     this.selectionImage = this.container.querySelector('img');
   }
 
-  // Player select an icon
+    // makes the player select an icon
   select(icon){
     this.selection = icon.dataset.selection;
   }
@@ -53,6 +57,8 @@ class Player {
     this.winner = false;
     this.resultScore = null;
     this.selectionImage.src = '';
+    this.container.classList.remove('icon--winner');
+    clearTimeout(this.animationTimeout);
   }
 }
 
@@ -104,7 +110,6 @@ function startGame(){
     sections.menu.classList.add('hidden');
     sections.game.classList.remove('hidden');
   }
-
 
 // a random icon is selected from the icons array and stored in the computer object
 function makeComputerSelection(){

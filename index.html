@@ -7,8 +7,8 @@
 <meta name="description" content="A web application game based around the popular game Rock, Paper, Scissor"/>
 <meta name="keywords" content="Rock, Paper, Scissors, Lizard, Spock">
 <title>Rock Paper Scissors Lizard Spock</title>
-<link rel="stylesheet" href="/assets/css/style.css">
-<link rel="shortcut icon" href="/assets/images/favicon-32x32.png" type="image/x-icon">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="shortcut icon" href="assets/images/favicon-32x32.png" type="image/x-icon">
 </head>
 <body>
     <section data-section="menu" class="page">
@@ -29,11 +29,11 @@
          </header>
          <section class="page__content" data-section="selection">
             <div class="icons-background">
-            <div data-selection="rock" class="icon icon--rock"><img src="./assets/images/icon-rock.svg" alt="rock image icon"></div>
-            <div data-selection="paper" class="icon icon--paper"><img src="./assets/images/icon-paper.svg" alt="paper image icon"></div>
-            <div data-selection="scissors" class="icon icon--scissors"><img src="./assets/images/icon-scissors.svg" alt="scissors image icon"></div>
-            <div data-selection="lizard" class="icon icon--lizard"><img src="./assets/images/icon-lizard.svg" alt="lizard image icon"></div>
-            <div data-selection="spock" class="icon icon--spock"><img src="./assets/images/icon-spock.svg" alt="spock image icon"></div>
+            <div data-selection="rock" class="icon icon--rock"><img src="assets/images/icon-rock.svg" alt="rock image icon"></div>
+            <div data-selection="paper" class="icon icon--paper"><img src="assets/images/icon-paper.svg" alt="paper image icon"></div>
+            <div data-selection="scissors" class="icon icon--scissors"><img src="assets/images/icon-scissors.svg" alt="scissors image icon"></div>
+            <div data-selection="lizard" class="icon icon--lizard"><img src="assets/images/icon-lizard.svg" alt="lizard image icon"></div>
+            <div data-selection="spock" class="icon icon--spock"><img src="assets/images/icon-spock.svg" alt="spock image icon"></div>
             </div>
          </section>
          
@@ -46,7 +46,7 @@
                     </div>
             </div>
             <div class="result">
-                <h2 class="result__title" data-text="result">RES&nbsp;</h2>
+                <h2 class="result__title" data-text="result">&nbsp;</h2>
                 <button class="btn btn--filled" data-button="play-again">PLAY AGAIN</button>
             </div>
             
@@ -60,17 +60,15 @@
          <button class="btn btn--rules" data-button="rules">RULES</button>
    </main>
 
-
     <section data-section="rules" class="modal-overlay hidden">
     <div class="modal">
         <h2 class="modal__title">RULES</h2>
         <button class="modal__close" data-button="close">
-            <img src="/assets/images/icon-close.svg" alt="close window">
+            <img src="assets/images/icon-close.svg" alt="close window">
         </button>
-        <img class="modal__content" src="/assets/images/image-rules-bonus.svg" alt="The rules of the game">
+        <img class="modal__content" src="assets/images/image-rules-bonus.svg" alt="The rules of the game">
     </div>
     </section>
-
-    <script src="/assets/js/game.js"></script>
+    <script src="assets/js/game.js"></script>
 </body>
 </html>
