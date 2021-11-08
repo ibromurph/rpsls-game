@@ -56,6 +56,24 @@ body {
   align-items: center;
 } 
 
+.page__logo  {
+  height: 100%;
+}
+
+.page__content {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  width: 100%;
+  max-width: 1200px;
+
+  --size: 140px;
+}
+
+
+/* BUTTON STYLES */
 .btn {
   --background-color: transparent;
   --text-color: hsl(0, 0%, 100%);
@@ -83,10 +101,16 @@ body {
   --text-color: hsl(229, 25%, 31%);
   --border-color: transparent;
 }
+
 .btn--filled:hover {
   --background-color: transparent;
   --text-color: hsl(0, 0%, 100%);
   --border-color: hsl(217, 16%, 45%);
+}
+
+.btn--rules {
+  justify-self: flex-end;
+  align-self: flex-end;
 }
 
 /* KEEP ALWAYS AT THE BOTTOM - CLASS TO HIDE ELEMENTS */
