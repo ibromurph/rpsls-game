@@ -57,6 +57,18 @@ body {
   white-space: nowrap;
 }
 
+.btn:hover, 
+.btn--filled {
+  --background-color: hsl(0, 0%, 100%);
+  --text-color: hsl(229, 25%, 31%);
+  --border-color: transparent;
+}
+.btn--filled:hover {
+  --background-color: transparent;
+  --text-color: hsl(0, 0%, 100%);
+  --border-color: hsl(217, 16%, 45%);
+}
+
 /* KEEP ALWAYS AT THE BOTTOM - CLASS TO HIDE ELEMENTS */
 .hidden {
   display: none !important;
