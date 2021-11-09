@@ -319,7 +319,15 @@ body {
   margin: 0 0 15px;
   white-space: nowrap;
 }
-
+.result__subtitle {
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 600;
+  color: hsl(0, 0%, 100%);
+  margin-bottom: 10px;
+  white-space: nowrap;
+}
 /* SELECTION STYLES */
 .selection {
   --size2x: calc(var(--size) * 2);
