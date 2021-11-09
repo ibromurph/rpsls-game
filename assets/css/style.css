@@ -260,6 +260,8 @@ body {
   left: -10%;
 }
 
+
+/* used box-shadow.dev to create box styling for winner*/
 .icon--winner {
   --first-shadow: calc(var(--border-width) * 2);
   --second-shadow: calc(var(--border-width) * 4);
@@ -269,8 +271,6 @@ body {
     0 0 0 var(--first-shadow) rgba(255, 255, 255, 0.05),
     0 0 0 var(--second-shadow) rgba(255, 255, 255, 0.05),
     0 0 0 var(--third-shadow) rgba(255, 255, 255, 0.05);
-  z-index: 10;
-
 }
 
 .icon img {
@@ -326,6 +326,88 @@ body {
   margin: 0 auto;
 }
 
+/* MEDIA QUERIES SECTION FOR RESPONSIVENESS */
+@media (max-width: 992px) {
+  .page__header { 
+    height: 130px;
+  }
+  .page__content {
+    --size: 120px;
+  }
+  .score-text {
+    font-size: 18px;
+  }
+  .score {
+    font-size: 48px;
+  }
+  .btn--rules {
+    justify-self: unset;
+    align-self: unset;
+  }  
+}
+@media (max-width: 768px) {
+  .result-container {
+    grid-template-columns: repeat(2, 1fr);
+    align-self: stretch;
+  }
+  .result {
+    grid-column: span 2;
+    align-self: start;
+    --width: 190px;
+  }
+  .result__title {
+    font-size: 50px;
+  }
+  .selection {
+    grid-row: 1 / span 1;
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .selection__title {
+    margin: 25px 0 10px;
+  }
+}
+@media (max-width: 576px) {
+  .page {
+    padding: 20px 15px 30px;
+  }
+  .page__header { 
+    height: 130px;
+  }
+  .page__content {
+    --size: 90px;
+  }
+  .score-container {
+    padding: 0 30px;
+  }
+  .icons-background {
+    margin-bottom: calc(var(--bg-size) / 10);
+  }
+  .modal {
+    height: 100%;
+    width: 100%;
+    max-width: 600px;
+    grid-template-columns: 1fr;
+    place-items: center;
+    padding: 20px 20px 30px;
+  }
+  .modal__content {
+    grid-column: span 1;
+    grid-row: 2 / 3;
+  }
+  .modal__close {
+    justify-self: center;
+    align-self: center;
+  }
+  .selection__title {
+    font-size: 18px;
+  }
+}
+@media (max-width: 360px) {
+  .page__content {
+    --size: 85px;
+  }
+}
 
 /* KEEP ALWAYS AT THE BOTTOM - CLASS TO HIDE ELEMENTS */
 .hidden {
