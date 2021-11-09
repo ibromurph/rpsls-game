@@ -86,7 +86,7 @@ body {
 }
 
 .score-text {
-  color: hsl(229, 64%, 46%);
+  color: hsl(229, 42%, 45%);
   font-size: 20px;
   font-weight: 600;
 }
@@ -96,6 +96,46 @@ body {
   color:hsl(229, 25%, 31%);
 }
 
+/* ICON STYLE SECTION */
+.icons-background {
+  --bg-size: calc(var(--size) * 3);
+  width: var(--bg-size);
+  height: var(--bg-size);
+  margin: calc(var(--bg-size) / 10);
+  margin-bottom: 0;
+  background-image: url('/assets/images/bg-pentagon.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+}
+
+.icon {
+  --border-color: transparent;
+  --border-width: calc(var(--size) * 0.1);
+  --shadow-offset: calc(var(--size) * 0.03);
+  --shadow-color: transparent;
+  --shadow-small-offset: calc(var(--shadow-offset) * 0.7);
+
+  background-color: #E8E8E8;
+  width: var(--size);
+  height: var(--size);
+  
+  border: var(--border-width) solid var(--border-color);
+  border-radius: 100%;
+  box-shadow: 
+    inset 0 var(--shadow-offset) 0 var(--shadow-offset) hsl(0, 0%, 0%, 0.1),
+    0 var(--shadow-small-offset) 0 var(--shadow-small-offset) var(--shadow-color); 
+  transition: box-shadow 1s ease-out;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  cursor: pointer;
+  position: absolute;
+  z-index: 2;
+}
 
 /* BUTTON STYLES */
 .btn {
