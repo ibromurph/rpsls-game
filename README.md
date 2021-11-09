@@ -1,4 +1,4 @@
-<h1 href="#rtt">Rock, Paper, Scissors, Lizard, Spock game</h1>
+<h1 id="#rtt">Rock, Paper, Scissors, Lizard, Spock game</h1>
 <h2>Ibrahim Murphy</h2>
 <hr>
 <h1>The Why</h1>
