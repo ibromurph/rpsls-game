@@ -1,6 +1,6 @@
 // GLOBAL CONSTANTS -------------------------------------------------------- //
 const IMAGE_BASE_PATH = "/assets/images/";
-const ANIMATION_UPDATE_DELAY = 4000; // 4seconds due to the result animations
+const ANIMATION_UPDATE_DELAY = 0; // Nice to have.
 
 // Stores each possible outcome of the game | 1 = win, 0 = lose, 0.5 = tie
 // ex. rock against scissors = 1 -> win for the rock
