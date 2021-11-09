@@ -1,4 +1,4 @@
-<img src="assets/images/designs/rpsls-devices.png" width="1680px" height="946px">
+<img src="assets/images/designs/rpsls-devices.png">
 <h1 id="return-to-the-top"><a href="https://rpsls-game-six.vercel.app/" alt="Try the game!">Rock, Paper, Scissors, Lizard, Spock game</a></h1>
 <h2>Ibrahim Murphy</h2>
 <hr>
