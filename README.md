@@ -44,18 +44,62 @@
 <li>Functioning RPSLS game</li>
 <li>Fully responsive design</li>
 <li>Ability to keep a scoring system</li>
-<li>Easy to navigate rules</li>
-<li>Ability to keep a scoring system</li>
+<li>A game over ending state</li>
+<li>Rules overlay to explain the game</li>
+</ol>
+
+<p>Features to be considered for future releases:</p>
+<ol>
+<li>A scoreboard system (local storage) to keep how many wins you can get in a row</li>
+<li>A best of 3, 5, 7 option</li>
+<li>Ability to play against another human player online</li>
 </ol>
 <h2>Structure</h2>
-<p>TBC</p>
+<p>The structure for the application has been designed to allow for the user to pick up and play quickly. The buttons and the game should be intuitive, so the user doesn't have a high learning curve.</p>
+<ul>
+<li>Landing page
+<ul><li>Landing page copy which introduces the user to website they've landed on</li>
+<li>There will be 2 buttons; one denoting the genesis of the game and one the begins the game</li>
+</ul></li>
+</ul>
+<ul>
+<li>Main game
+<ul>
+<li>Game logo at the top of page</li>
+<li>Scoring copy which keeps the current points score</li>
+<li>Main canvas with the 5 icon options of Rock, Paper, Scissors, Lizard, Spock</li>
+<li>Rules button that opens in an overlay</li>
+</ul></li>
+</ul>
+<ul>
+<li>Results page
+<ul>
+<li>Scoring copy which keeps the current points score</li>
+<li>Main canvas with user selection and computer selection, with copy/animation of winner</li>
+<li>Rules button that opens in an overlay</li>
+</ul></li>
+</ul>
+<hr>
 <h2>Skeleton</h2>
-<p>TBC</p>
 <h3>Wireframes</h3>
-<p>TBC</p>
+<p>Desktop:
+<ul>
+<li><a href="assets/images/designs/desktop-step-1-bonus.jpg">Step 1</a></li>
+<li><a href="assets/images/designs/desktop-step-2-bonus.jpg">Step 2</a></li>
+<li><a href="assets/images/designs/desktop-step-3-bonus.jpg">Step 3</a></li>
+<li><a href="assets/images/designs/desktop-step-4-bonus.jpg">Step 4</a></li>
+<li><a href="assets/images/designs/desktop-rules-modal-bonus.jpg">Rules</a></li>
+</ul>
+</p>
+<p>Mobile:</p>
+<ul>
+<li><a href="assets/images/designs/mobile-step-1-bonus.jpg">Step 1</a></li>
+<li><a href="assets/images/designs/mobile-step-2-bonus.jpg">Step 2</a></li>
+<li><a href="assets/images/designs/mobile-step-3-bonus.jpg">Step 3</a></li>
+<li><a href="assets/images/designs/mobile-step-4-bonus.jpg">Step 4</a></li>
+<li><a href="assets/images/designs/mobile-rules-modal-bonus.jpg">Rules</a></li>
+</ul>
 
-<h2>Surface</h2>
-<p>TBC</p>
 <h3>Colours</h3>
 <p>TBC</p>
 <h3>Typography</h3>
