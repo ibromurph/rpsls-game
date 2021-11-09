@@ -1,5 +1,6 @@
-<h1 id="#top">Rock, Paper, Scissors, Lizard, Spock game</h1>
+<h1>Rock, Paper, Scissors, Lizard, Spock game</h1>
 <h2>Ibrahim Murphy</h2>
+<hr>
 <h1>The Why</h1>
 <p>TBC</p>
 <hr>
