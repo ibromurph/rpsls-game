@@ -20,20 +20,6 @@ const RESULT_TEXTS = {
   tie: 'Tie!'
 };
 
-/* GLOBAL OBJECTS/CLASSES
-const scoreObj = {
-  score: 0, 
-  span: document.querySelector('[data-text="score"]'),
-  // function which updates the score based on the passed difference
-  update(scoreDifference) {
-    this.score += scoreDifference;
-    // after the result animation is done, update the score in the page UI
-    setTimeout(() => {
-      this.span.innerText = this.score;
-    }, ANIMATION_UPDATE_DELAY);
-  }
-};*/
-
 class Player {
   constructor(identifier){
     this.winner = false;
@@ -124,15 +110,6 @@ sections.rules.addEventListener('click', e => {
     sections.rules.classList.add('hidden')
 });
 
-/*
-icons.forEach(icon => icon.addEventListener('click', () => {
-  sections.selection.classList.add('hidden');
-  sections.decision.classList.remove('hidden');
-  user.select(icon);
-  makeComputerSelection();
-  decideWinner();
-}));*/
-
 // when an icon is clicked a new game round starts
 icons.forEach(icon => icon.addEventListener('click', () => gameRound(icon)));
 
@@ -142,7 +119,6 @@ function startGame(){
     sections.game.classList.remove('hidden');
     playAgainButton.classList.add('hidden');
   }
-
 
 // function to control a single game round
 function gameRound(icon){
@@ -208,7 +184,7 @@ function resetRound(){
 function resetGame(){
   resetRound();
   user.resetScore();
-  computer.resetScore();
+  computer.resetScore();C
   playAgainButton.classList.add('hidden');
   gameOverText.classList.add('hidden');
 }
