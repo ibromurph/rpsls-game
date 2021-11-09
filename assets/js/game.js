@@ -1,6 +1,6 @@
 // GLOBAL CONSTANTS -------------------------------------------------------- //
 const IMAGE_BASE_PATH = "/assets/images/";
-const ANIMATION_UPDATE_DELAY = 2000; // Nice to have.
+const ANIMATION_UPDATE_DELAY = 0; // Nice to have.
 const DELAY_BETWEEN_ROUNDS = ANIMATION_UPDATE_DELAY + 2000;
 const POINTS_TO_WIN = 5;
 
@@ -105,9 +105,10 @@ const sections = {
   selection: document.querySelector('[data-section="selection"]'),
   decision: document.querySelector('[data-section="decision"]'),
 };
-
+// selects are the 5 icons that can be selected by the player
 const icons = document.querySelectorAll('[data-selection]');
 
+// EVENT LISTENERS
 // executes the startGame/resetGame function when the button is clicked 
 startButton.addEventListener('click', startGame); 
 playAgainButton.addEventListener('click', resetGame);
@@ -115,43 +116,76 @@ playAgainButton.addEventListener('click', resetGame);
 // if the rules button is clicked, the rules section is shown (hidden class removed)
 rulesButton.addEventListener('click', () => sections.rules.classList.remove('hidden'));
 
+// if the user clicks on the rules close button or outside of the modal on the overlay 
+// the rules section gets hidden (hidden class added)
 closeButton.addEventListener('click', () => sections.rules.classList.add('hidden'));
 sections.rules.addEventListener('click', e => {
   if(e.target.classList.contains('modal-overlay'))
     sections.rules.classList.add('hidden')
-  });
+});
 
+/*
 icons.forEach(icon => icon.addEventListener('click', () => {
   sections.selection.classList.add('hidden');
   sections.decision.classList.remove('hidden');
   user.select(icon);
   makeComputerSelection();
   decideWinner();
-}));
+}));*/
+
+// when an icon is clicked a new game round starts
+icons.forEach(icon => icon.addEventListener('click', () => gameRound(icon)));
 
 // FUNCTIONS
 function startGame(){
     sections.menu.classList.add('hidden');
     sections.game.classList.remove('hidden');
+    playAgainButton.classList.add('hidden');
   }
+
+
+// function to control a single game round
+function gameRound(icon){
+  // at the start of a round the selection section gets hidden and the decision section gets shown
+  sections.selection.classList.add('hidden');
+  sections.decision.classList.remove('hidden');
+
+  // the user selection is stored in the user object and the computer's selection is made randomly
+  user.select(icon);
+  computer.select(makeComputerSelection());
+
+  // winner is determined and the result is shown in the result section
+  decideWinner();
+
+    // if a player reaches the game ends and the ending screen updates as necessary
+  // otherwise a new round starts after a bit of delay
+  if(user.score == POINTS_TO_WIN || computer.score == POINTS_TO_WIN) {
+    playAgainButton.classList.remove('hidden');
+    gameOverText.classList.remove('hidden');
+    resultText.innerText = user.score == POINTS_TO_WIN ? RESULT_TEXTS.win : RESULT_TEXTS.lose;
+  }
+  else 
+    setTimeout(resetRound, DELAY_BETWEEN_ROUNDS);
+}
 
 // a random icon is selected from the icons array and stored in the computer object
 function makeComputerSelection(){
   const randomIndex = Math.floor(Math.random() * icons.length);
-  const randomSelection = icons[randomIndex];
-  computer.select(randomSelection);
+  return icons[randomIndex];
 }
 
+// the winner is determined based on the user and computer selections using 
+// the result options object, and the computer and the player objects are updated accordingly
 function decideWinner(){
   user.resultScore = RESULT_OPTIONS[user.selection][computer.selection];
 
   if(user.resultScore == 1){
-    scoreObj.update(1);
+    user.score++;
     user.winner = true;
     resultText.innerText = RESULT_TEXTS.win;
   } 
   else if(user.resultScore == 0){
-    scoreObj.update(-1);
+    computer.score++;
     computer.winner = true;
     resultText.innerText = RESULT_TEXTS.lose;
   }
@@ -162,10 +196,19 @@ function decideWinner(){
   computer.update();
 }
 
-// resets the game to it's initial state where the player can pick a new icon
-function resetGame(){
+// resets the game to it's initial state where a new round can start
+function resetRound(){
   sections.decision.classList.add('hidden');
   sections.selection.classList.remove('hidden');
   user.reset();
   computer.reset();
+}
+
+// resets everything to the initial state for a new game
+function resetGame(){
+  resetRound();
+  user.resetScore();
+  computer.resetScore();
+  playAgainButton.classList.add('hidden');
+  gameOverText.classList.add('hidden');
 }
