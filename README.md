@@ -1,4 +1,5 @@
-<h1 id="return-to-the-top">Rock, Paper, Scissors, Lizard, Spock game</h1>
+<img src="assets/images/designs/rpsls-devices.png" width="1680px" height="946px">
+<h1 id="return-to-the-top"><a href="https://rpsls-game-six.vercel.app/" alt="Try the game!">Rock, Paper, Scissors, Lizard, Spock game</a></h1>
 <h2>Ibrahim Murphy</h2>
 <hr>
 <h1>The Why</h1>
@@ -29,7 +30,7 @@
 <li>I want to make sure the user learns the rule of the game quickly.</li>
 </ol>
 <h2>User Stories</h2>
-<p>Create an interactive quiz that displays all data in a clear and easy-to-read way. Provide consistent styling across all pages using a mobile-first approach and ensure that the application runs flawlessly across all devices. Create code that allows for ease when implementing future updates and features.</p>
+<p>Create an interactive, fun game that is easy to pick and play. The aim is provide consistent styling across all pages ensuring that the application runs flawlessly across all major devices. The code should be intuitive read and allow for updates to be made easily, for those wishing to implement improved features in future.</p>
 <h2>Strategy</h2>
 <p>TBC</p>
 <h2>Scope</h2>
