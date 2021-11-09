@@ -30,11 +30,23 @@
 <li>I want to make sure the user learns the rule of the game quickly.</li>
 </ol>
 <h2>User Stories</h2>
-<p>Create an interactive, fun game that is easy to pick and play. The aim is provide consistent styling across all pages ensuring that the application runs flawlessly across all major devices. The code should be intuitive read and allow for updates to be made easily, for those wishing to implement improved features in future.</p>
 <h2>Strategy</h2>
-<p>TBC</p>
+<p>Create an interactive, fun game that is easy to pick up and play. The aim is provide consistent styling across all pages ensuring that the application runs flawlessly across all major devices. The code should be intuitive read and allow for updates to be made easily, for those wishing to implement improved features in future.</p>
+<ul>
+<li>To provide a fun and interactive game application.</li>
+<li>The user should have a target to win the game.</li>
+<li>The user should be able to learn the rules of the game quickly.</li>
+</ul>
+
 <h2>Scope</h2>
-<p>TBC</p>
+<p>The scope of Rock, Paper, Scissors, Lizard, Spock game in its first release is defined by the following features:</p>
+<ol>
+<li>Functioning RPSLS game</li>
+<li>Fully responsive design</li>
+<li>Ability to keep a scoring system</li>
+<li>Easy to navigate rules</li>
+<li>Ability to keep a scoring system</li>
+</ol>
 <h2>Structure</h2>
 <p>TBC</p>
 <h2>Skeleton</h2>

@@ -7,11 +7,41 @@ const POINTS_TO_WIN = 5;
 // Stores each possible outcome of the game | 1 = win, 0 = lose, 0.5 = tie
 // ex. rock against scissors = 1 -> win for the rock
 const RESULT_OPTIONS = {
-  rock: {scissors: 1, lizard: 1, rock: 0.5, paper: 0, spock: 0},
-  paper: {rock: 1, spock: 1, paper: 0.5, scissors: 0, lizard: 0},
-  scissors: {paper: 1, lizard: 1, scissors: 0.5, rock: 0, spock: 0},
-  lizard: {spock: 1, paper: 1, lizard: 0.5, rock: 0, scissors: 0},
-  spock: {scissors: 1, rock: 1, spock: 0.5, paper: 0, lizard: 0}
+  rock: {
+    scissors: 1,
+    lizard: 1,
+    rock: 0.5,
+    paper: 0,
+    spock: 0
+  },
+  paper: {
+    rock: 1,
+    spock: 1,
+    paper: 0.5,
+    scissors: 0,
+    lizard: 0
+  },
+  scissors: {
+    paper: 1,
+    lizard: 1,
+    scissors: 0.5,
+    rock: 0,
+    spock: 0
+  },
+  lizard: {
+    spock: 1,
+    paper: 1,
+    lizard: 0.5,
+    rock: 0,
+    scissors: 0
+  },
+  spock: {
+    scissors: 1,
+    rock: 1,
+    spock: 0.5,
+    paper: 0,
+    lizard: 0
+  }
 };
 
 const RESULT_TEXTS = {
@@ -21,38 +51,38 @@ const RESULT_TEXTS = {
 };
 
 class Player {
-  constructor(identifier){
+  constructor(identifier) {
     this.winner = false;
     this.selection = null;
     this.resultScore = null;
     this.container = document.querySelector(`[data-player="${identifier}"]`);
     this.selectionImage = this.container.querySelector('img');
     this.score = 0;
-    this.scoreSpan = document.querySelector(`[data-score="${identifier}"]`); 
+    this.scoreSpan = document.querySelector(`[data-score="${identifier}"]`);
   }
 
   // makes the player select an icon
-  select(icon){
+  select(icon) {
     this.selection = icon.dataset.selection;
   }
-  
+
   // updates the UI based on the player's selection with the image and image classes
-  update(){
+  update() {
     this.container.classList.add(`icon--${this.selection}`);
     this.selectionImage.src = `${IMAGE_BASE_PATH}/icon-${this.selection}.svg`;
 
-     // after the result animation is done the players's score is updated
-     this.animationTimeout = setTimeout(() => {
+    // after the result animation is done the players's score is updated
+    this.animationTimeout = setTimeout(() => {
       this.scoreSpan.innerText = this.score;
 
-    // if this player is the winner, the winner class is added to the container
-      if(this.winner) 
+      // if this player is the winner, the winner class is added to the container
+      if (this.winner)
         this.container.classList.add('icon--winner');
-    }, ANIMATION_UPDATE_DELAY); 
+    }, ANIMATION_UPDATE_DELAY);
   }
 
   // resets every logic element to it's initial state and removes the UI classnames
-  reset(){
+  reset() {
     this.container.classList.remove(`icon--${this.selection}`);
     this.selection = null;
     this.winner = false;
@@ -61,12 +91,12 @@ class Player {
     this.container.classList.remove('icon--winner');
     clearTimeout(this.animationTimeout);
   }
-    // resets the score to 0 and updates the UI accordingly
-    resetScore(){
-      this.score = 0;
-      this.scoreSpan.innerText = this.score;
-    }
+  // resets the score to 0 and updates the UI accordingly
+  resetScore() {
+    this.score = 0;
+    this.scoreSpan.innerText = this.score;
   }
+}
 
 // Creates a player instance for the user and computer
 const user = new Player('user');
@@ -81,7 +111,7 @@ const playAgainButton = document.querySelector('[data-button="play-again"]');
 
 // selects the result text from the result page 
 const resultText = document.querySelector('[data-text="result"]');
-const gameOverText = document.querySelector('[data-text="game-over"]'); 
+const gameOverText = document.querySelector('[data-text="game-over"]');
 
 // Object with all page sections selected from the HTML
 const sections = {
@@ -96,7 +126,7 @@ const icons = document.querySelectorAll('[data-selection]');
 
 // EVENT LISTENERS
 // executes the startGame/resetGame function when the button is clicked 
-startButton.addEventListener('click', startGame); 
+startButton.addEventListener('click', startGame);
 playAgainButton.addEventListener('click', resetGame);
 
 // if the rules button is clicked, the rules section is shown (hidden class removed)
@@ -106,7 +136,7 @@ rulesButton.addEventListener('click', () => sections.rules.classList.remove('hid
 // the rules section gets hidden (hidden class added)
 closeButton.addEventListener('click', () => sections.rules.classList.add('hidden'));
 sections.rules.addEventListener('click', e => {
-  if(e.target.classList.contains('modal-overlay'))
+  if (e.target.classList.contains('modal-overlay'))
     sections.rules.classList.add('hidden');
 });
 
@@ -114,14 +144,14 @@ sections.rules.addEventListener('click', e => {
 icons.forEach(icon => icon.addEventListener('click', () => gameRound(icon)));
 
 // FUNCTIONS
-function startGame(){
-    sections.menu.classList.add('hidden');
-    sections.game.classList.remove('hidden');
-    playAgainButton.classList.add('hidden');
-  }
+function startGame() {
+  sections.menu.classList.add('hidden');
+  sections.game.classList.remove('hidden');
+  playAgainButton.classList.add('hidden');
+}
 
 // function to control a single game round
-function gameRound(icon){
+function gameRound(icon) {
   // at the start of a round the selection section gets hidden and the decision section gets shown
   sections.selection.classList.add('hidden');
   sections.decision.classList.remove('hidden');
@@ -133,39 +163,36 @@ function gameRound(icon){
   // winner is determined and the result is shown in the result section
   decideWinner();
 
-    // if a player reaches the game ends and the ending screen updates as necessary
+  // if a player reaches the game ends and the ending screen updates as necessary
   // otherwise a new round starts after a bit of delay
-  if(user.score == POINTS_TO_WIN || computer.score == POINTS_TO_WIN) {
+  if (user.score == POINTS_TO_WIN || computer.score == POINTS_TO_WIN) {
     playAgainButton.classList.remove('hidden');
     gameOverText.classList.remove('hidden');
     resultText.innerText = user.score == POINTS_TO_WIN ? RESULT_TEXTS.win : RESULT_TEXTS.lose;
-  }
-  else 
+  } else
     setTimeout(resetRound, DELAY_BETWEEN_ROUNDS);
 }
 
 // a random icon is selected from the icons array and stored in the computer object
-function makeComputerSelection(){
+function makeComputerSelection() {
   const randomIndex = Math.floor(Math.random() * icons.length);
   return icons[randomIndex];
 }
 
 // the winner is determined based on the user and computer selections using 
 // the result options object, and the computer and the player objects are updated accordingly
-function decideWinner(){
+function decideWinner() {
   user.resultScore = RESULT_OPTIONS[user.selection][computer.selection];
 
-  if(user.resultScore == 1){
+  if (user.resultScore == 1) {
     user.score++;
     user.winner = true;
     resultText.innerText = RESULT_TEXTS.win;
-  } 
-  else if(user.resultScore == 0){
+  } else if (user.resultScore == 0) {
     computer.score++;
     computer.winner = true;
     resultText.innerText = RESULT_TEXTS.lose;
-  }
-  else {
+  } else {
     resultText.innerText = RESULT_TEXTS.tie;
   }
   user.update();
@@ -173,7 +200,7 @@ function decideWinner(){
 }
 
 // resets the game to it's initial state where a new round can start
-function resetRound(){
+function resetRound() {
   sections.decision.classList.add('hidden');
   sections.selection.classList.remove('hidden');
   user.reset();
@@ -181,7 +208,7 @@ function resetRound(){
 }
 
 // resets everything to the initial state for a new game
-function resetGame(){
+function resetGame() {
   resetRound();
   user.resetScore();
   computer.resetScore();
