@@ -137,6 +137,38 @@ body {
   z-index: 2;
 }
 
+.icon--paper {
+  --border-color: hsl(230, 89%, 62%);
+  --shadow-color: hsl(229, 66%, 46%);
+  top: 25%;
+  right: -10%;
+}
+.icon--rock {
+  --border-color: hsl(349, 71%, 52%);
+  --shadow-color: hsl(347, 75%, 35%);
+  bottom: -10%;
+  right: 5%;
+}
+.icon--scissors {
+  --border-color: hsl(40, 84%, 53%);
+  --shadow-color: hsl(29, 78%, 44%);
+  left: 33.33%;
+  right: 33.33%;
+  top: -10%;
+}
+.icon--lizard {
+  --border-color: hsl(261, 73%, 60%);
+  --shadow-color: hsl(261, 51%, 45%);
+  bottom: -10%;
+  left: 5%;
+}
+.icon--spock {
+  --border-color:hsl(189, 59%, 53%);
+  --shadow-color: hsl(195, 59%, 43%);
+  top: 25%;
+  left: -10%;
+}
+
 /* BUTTON STYLES */
 .btn {
   --background-color: transparent;
