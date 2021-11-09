@@ -62,7 +62,7 @@ class Player {
     this.winner = false;
     this.resultScore = null;
     this.selectionImage.src = '';
-    
+  
     this.container.classList.remove('icon--winner');
     clearTimeout(this.animationTimeout);
   }
