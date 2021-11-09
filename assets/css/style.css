@@ -260,6 +260,19 @@ body {
   left: -10%;
 }
 
+.icon--winner {
+  --first-shadow: calc(var(--border-width) * 2);
+  --second-shadow: calc(var(--border-width) * 4);
+  --third-shadow: calc(var(--border-width) * 6);
+
+  box-shadow: 
+    0 0 0 var(--first-shadow) rgba(255, 255, 255, 0.05),
+    0 0 0 var(--second-shadow) rgba(255, 255, 255, 0.05),
+    0 0 0 var(--third-shadow) rgba(255, 255, 255, 0.05);
+  z-index: 10;
+
+}
+
 .icon img {
   width: 45%;
 }
@@ -312,6 +325,7 @@ body {
   bottom: unset;
   margin: 0 auto;
 }
+
 
 /* KEEP ALWAYS AT THE BOTTOM - CLASS TO HIDE ELEMENTS */
 .hidden {
