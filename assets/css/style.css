@@ -96,6 +96,57 @@ body {
   color:hsl(229, 25%, 31%);
 }
 
+/* RULES OVERLAY, MODAL */
+.modal-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: hsla(0, 0%, 0%, 0.5);
+  transition: all 0.2s;
+  z-index: 10;
+
+  display: flex;
+  justify-content: center;
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  max-width: 400px;
+  background: hsl(0, 0%, 100%);
+  border-radius: 10px;
+  padding: 30px 30px 40px;
+  
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 15px;
+}
+
+.modal__title {
+  color: hsl(229, 25%, 31%);
+  font-size: 32px;
+  margin: 0;
+  text-align: left;
+  font-weight: 700;
+}
+
+.modal__content {
+  width: 100%;
+  grid-column: span 2;
+}
+.modal__close {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  justify-self: end;
+  align-self: center;
+}
+
 /* ICON STYLE SECTION */
 .icons-background {
   --bg-size: calc(var(--size) * 3);

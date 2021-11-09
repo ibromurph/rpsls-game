@@ -48,6 +48,12 @@ class Player {
   update(){
     this.container.classList.add(`icon--${this.selection}`);
     this.selectionImage.src = `${IMAGE_BASE_PATH}/icon-${this.selection}.svg`;
+      // if the player is the winner adds the winner class to the container after the result animation is done
+      if(this.winner) 
+      this.animationTimeout = setTimeout(() => {
+        this.container.classList.add('icon--winner');
+      }, ANIMATION_UPDATE_DELAY); 
+  }
   }
    // resets every logic element to it's initial state and removes the UI classnames
    reset(){
@@ -56,6 +62,7 @@ class Player {
     this.winner = false;
     this.resultScore = null;
     this.selectionImage.src = '';
+    
     this.container.classList.remove('icon--winner');
     clearTimeout(this.animationTimeout);
   }
