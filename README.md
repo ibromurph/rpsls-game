@@ -1,14 +1,35 @@
-<h1 id="rtt">Rock, Paper, Scissors, Lizard, Spock game</h1>
+<h1 id="return-to-the-top">Rock, Paper, Scissors, Lizard, Spock game</h1>
 <h2>Ibrahim Murphy</h2>
 <hr>
 <h1>The Why</h1>
-<p>TBC</p>
+<p>Rock Paper Scissors Lizard Spock is the extended version of the game Rock Paper Scissors, popularised on the show <a href="https://www.youtube.com/watch?v=Kov2G0GouBw">The Big Bang Theory.</a> The site’s goal is to provide a challenging game to entertain, but also educate online users, into the rules/workings of the game.</p>
 <hr>
 <h1>User Experience(UX)</h1>
 <h2>Target Audience</h2>
-<p>TBC</p>
+<ul>
+<li>People who enjoy easy-to-play online games.</li>
+<li>People wanting to learn the rules of Rock, Paper, Scissors, Lizard, Spock.</li>
+<li>People of all ages.</li>
+</ul>
+<p>First time user:</p>
+<ol>
+<li>As a user I would like to play a competitive online game.</li>
+<li>As a user I would like to be able to learn the rules of the game.</li>
+<li>As a user I want the application to be easy to play and easy to navigate.</li>
+</ol>
+<p>Returning User:</p>
+<ol>
+<li>I would want to be able to navigate the site with ease.</li>
+<li>I would want to be able to remember how to use the play the game with ease.</li>
+</ol>
+<p>As a site creator:</p>
+<ol>
+<li>I want to make the game to be interactive, fun and intuitive.</li>
+<li>I want to ensure there is a challenging aspect of the game for the user.</li>
+<li>I want to make sure the user learns the rule of the game quickly.</li>
+</ol>
 <h2>User Stories</h2>
-<p>TBC</p>
+<p>Create an interactive quiz that displays all data in a clear and easy-to-read way. Provide consistent styling across all pages using a mobile-first approach and ensure that the application runs flawlessly across all devices. Create code that allows for ease when implementing future updates and features.</p>
 <h2>Strategy</h2>
 <p>TBC</p>
 <h2>Scope</h2>
@@ -58,4 +79,4 @@
 <hr>
 <h1>Credits</h1>
 <p>TBC</p>
-<a href="#rtt" alt="Return to the top">RETURN TO THE TOP</a>
+<a href="#return-to-the-top" alt="Return to the top">RETURN TO THE TOP</a>
