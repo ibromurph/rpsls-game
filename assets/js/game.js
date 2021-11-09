@@ -1,5 +1,5 @@
 // GLOBAL CONSTANTS -------------------------------------------------------- //
-const IMAGE_BASE_PATH = "assets/images/";
+const IMAGE_BASE_PATH = "/assets/images/";
 const ANIMATION_UPDATE_DELAY = 4000; // 4seconds due to the result animations
 
 // Stores each possible outcome of the game | 1 = win, 0 = lose, 0.5 = tie
@@ -17,6 +17,7 @@ const RESULT_TEXTS = {
   lose: 'You lose!',
   tie: 'Tie!'
 };
+
 // GLOBAL OBJECTS/CLASSES
 const scoreObj = {
   score: 0, 
@@ -24,22 +25,23 @@ const scoreObj = {
   // function which updates the score based on the passed difference
   update(scoreDifference) {
     this.score += scoreDifference;
-        // after the result animation is done, update the score in the page UI
+    // after the result animation is done, update the score in the page UI
     setTimeout(() => {
       this.span.innerText = this.score;
     }, ANIMATION_UPDATE_DELAY);
   }
 };
 
-class Player { 
+class Player {
   constructor(identifier){
+    this.winner = false;
     this.selection = null;
     this.resultScore = null;
     this.container = document.querySelector(`[data-player="${identifier}"]`);
     this.selectionImage = this.container.querySelector('img');
   }
 
-    // makes the player select an icon
+  // makes the player select an icon
   select(icon){
     this.selection = icon.dataset.selection;
   }
@@ -48,13 +50,13 @@ class Player {
   update(){
     this.container.classList.add(`icon--${this.selection}`);
     this.selectionImage.src = `${IMAGE_BASE_PATH}/icon-${this.selection}.svg`;
-      // if the player is the winner adds the winner class to the container after the result animation is done
-      if(this.winner) 
+    // if the player is the winner adds the winner class to the container after the result animation is done
+    if(this.winner) 
       this.animationTimeout = setTimeout(() => {
         this.container.classList.add('icon--winner');
       }, ANIMATION_UPDATE_DELAY); 
   }
-  }
+
    // resets every logic element to it's initial state and removes the UI classnames
    reset(){
     this.container.classList.remove(`icon--${this.selection}`);
@@ -88,7 +90,7 @@ const sections = {
   rules: document.querySelector('[data-section="rules"]'),
   selection: document.querySelector('[data-section="selection"]'),
   decision: document.querySelector('[data-section="decision"]'),
-}
+};
 
 const icons = document.querySelectorAll('[data-selection]');
 
@@ -109,7 +111,7 @@ icons.forEach(icon => icon.addEventListener('click', () => {
   user.select(icon);
   makeComputerSelection();
   decideWinner();
-}))
+}));
 
 // FUNCTIONS
 function startGame(){

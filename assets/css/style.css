@@ -72,6 +72,46 @@ body {
   --size: 140px;
 }
 
+/* BUTTON STYLES */
+.btn {
+  --background-color: transparent;
+  --text-color: hsl(0, 0%, 100%);
+  --border-color: hsl(217, 16%, 45%);
+
+  border: 2px solid var(--border-color);
+  padding: 10px 35px;
+  border-radius: 10px;
+  background: var(--background-color);
+  color: var(--text-color);
+  letter-spacing: 2px;
+  font-weight: 600;
+  font-family: inherit;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-transform: uppercase;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.btn:hover, 
+.btn--filled {
+  --background-color: hsl(0, 0%, 100%);
+  --text-color: hsl(229, 25%, 31%);
+  --border-color: transparent;
+}
+
+.btn--filled:hover {
+  --background-color: transparent;
+  --text-color: hsl(0, 0%, 100%);
+  --border-color: hsl(217, 16%, 45%);
+}
+
+.btn--rules {
+  justify-self: flex-end;
+  align-self: flex-end;
+}
+
 /* SCORE STYLES SECTION */
 .score-container {
   display: flex;
@@ -97,7 +137,7 @@ body {
 }
 
 /* RULES OVERLAY, MODAL */
-.modal-overlay {
+/*.modal-overlay {
   position: absolute;
   top: 0;
   left: 0;
@@ -145,7 +185,7 @@ body {
   cursor: pointer;
   justify-self: end;
   align-self: center;
-}
+}*/
 
 /* ICON STYLE SECTION */
 .icons-background {
@@ -222,47 +262,6 @@ body {
 
 .icon img {
   width: 45%;
-}
-
-
-/* BUTTON STYLES */
-.btn {
-  --background-color: transparent;
-  --text-color: hsl(0, 0%, 100%);
-  --border-color: hsl(217, 16%, 45%);
-
-  border: 2px solid var(--border-color);
-  padding: 10px 35px;
-  border-radius: 10px;
-  background: var(--background-color);
-  color: var(--text-color);
-  letter-spacing: 2px;
-  font-weight: 600;
-  font-family: inherit;
-  font-size: 16px;
-  cursor: pointer;
-  transition: all 0.2s;
-  text-transform: uppercase;
-  text-decoration: none;
-  white-space: nowrap;
-}
-
-.btn:hover, 
-.btn--filled {
-  --background-color: hsl(0, 0%, 100%);
-  --text-color: hsl(229, 25%, 31%);
-  --border-color: transparent;
-}
-
-.btn--filled:hover {
-  --background-color: transparent;
-  --text-color: hsl(0, 0%, 100%);
-  --border-color: hsl(217, 16%, 45%);
-}
-
-.btn--rules {
-  justify-self: flex-end;
-  align-self: flex-end;
 }
 
 /* KEEP ALWAYS AT THE BOTTOM - CLASS TO HIDE ELEMENTS */
