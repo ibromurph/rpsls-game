@@ -1,6 +1,6 @@
 // GLOBAL CONSTANTS -------------------------------------------------------- //
-const IMAGE_BASE_PATH = "/assets/images/";
-const ANIMATION_UPDATE_DELAY = 0; // Nice to have.
+const IMAGE_BASE_PATH = "assets/images/";
+const ANIMATION_UPDATE_DELAY = 500; // Nice to have.
 const DELAY_BETWEEN_ROUNDS = ANIMATION_UPDATE_DELAY + 2000;
 const POINTS_TO_WIN = 5;
 
@@ -107,7 +107,7 @@ rulesButton.addEventListener('click', () => sections.rules.classList.remove('hid
 closeButton.addEventListener('click', () => sections.rules.classList.add('hidden'));
 sections.rules.addEventListener('click', e => {
   if(e.target.classList.contains('modal-overlay'))
-    sections.rules.classList.add('hidden')
+    sections.rules.classList.add('hidden');
 });
 
 // when an icon is clicked a new game round starts
@@ -184,7 +184,7 @@ function resetRound(){
 function resetGame(){
   resetRound();
   user.resetScore();
-  computer.resetScore();C
+  computer.resetScore();
   playAgainButton.classList.add('hidden');
   gameOverText.classList.add('hidden');
 }
