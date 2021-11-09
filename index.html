@@ -13,6 +13,7 @@
 <body>
     <section data-section="menu" class="page">
         <h1 class="page__title">Welcome to Rock, Paper, Scissors, Lizard, Spock</h1>
+          <h2 class="page__subtitle">First to reach 5 points wins!</h2>
         <div class="page__buttons">
             <a href="https://www.youtube.com/watch?v=pIpmITBocfM" class="btn" target="_blank">About the game</a>
             <button class="btn" data-button="start">Play the game</button>
@@ -22,10 +23,16 @@
    <main data-section="game" class="page hidden">
          <header class="page__header">
              <img src="assets/images/logo-bonus.svg" alt="The logo of the game" class="page__logo">
-             <div class="score-container">
-                 <div class="score-text">SCORE</div>
-                <span id="score" class="score" data-text="score">0</span>
-             </div>
+             <div class="score-wrapper">
+                <div class="score-container">
+                  <div class="score-text">YOU</div>
+                  <span data-score="user" class="score">0</span>
+                </div>
+                <div class="score-container">
+                  <div class="score-text">THE HOUSE</div>
+                  <span data-score="computer" class="score">0</span>
+                </div>
+              </div>
          </header>
          <section class="page__content" data-section="selection">
             <div class="icons-background">
@@ -45,17 +52,17 @@
                     <div class="icon selection__icon" data-player="user">
                         <img src="/" alt="Player pick">
                     </div>
-           
                 </div>
            
                 <div class="result">
+                <h3 class="result__subtitle hidden" data-text="game-over">GAME OVER!</h3>
                 <h2 class="result__title" data-text="result">&nbsp;</h2>
                 <button class="btn btn--filled" data-button="play-again">PLAY AGAIN</button>
                 </div>
             
                 <div class="selection">
                     <h3 class="selection__title">THE HOUSE PICKED</h3>
-                    <div class="icon icon--rock selection__icon selection--opponent" data-player="computer">
+                    <div class="icon selection__icon selection--opponent"  data-player="computer">
                          <img src="/" alt="House pick">
                     </div>
                 </div>
