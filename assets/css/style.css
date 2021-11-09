@@ -169,6 +169,15 @@ body {
   left: -10%;
 }
 
+/*.icon--winner {
+TBC
+}*/
+
+.icon img {
+  width: 45%;
+}
+
+
 /* BUTTON STYLES */
 .btn {
   --background-color: transparent;
