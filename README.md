@@ -3,7 +3,22 @@
 <h2>Ibrahim Murphy</h2>
 <hr>
 <h1>The Why</h1>
-<p>Rock Paper Scissors Lizard Spock is the extended version of the game Rock Paper Scissors, popularised on the show <a href="https://www.youtube.com/watch?v=Kov2G0GouBw">The Big Bang Theory.</a> The site’s goal is to provide a challenging game to entertain, but also educate online users, into the rules/workings of the game.</p>
+<p>Rock, Paper, Scissors, Lizard, Spock is the extended version of the game Rock Paper Scissors, popularised on the show <a href="https://www.youtube.com/watch?v=Kov2G0GouBw">The Big Bang Theory.</a> The site’s goal is to provide a challenging game to entertain, but also educate online users, into the rules/workings of the game.</p>
+<hr>
+<h2><b>The Rules</b></h2>
+<ul>
+<li>Scissors beats Paper</li>
+<li>Paper beats Rock</li>
+<li>Rock beats Lizard</li>
+<li>Lizard beats Spock</li>
+<li>Spock beats Scissors</li>
+<li>Scissors beats Lizard</li>
+<li>Paper beats Spock</li>
+<li>Rock beats Scissors</li>
+<li>Lizard beats Paper</li>
+<li>Spock beats Rock</li></ul>
+<p>Not sure what Rock, Paper, Scissors, Lizard, Spock is? <a href="https://www.youtube.com/watch?v=iSHPVCBsnLw"  target="">Check out this clip from The Big Bang Theory.</a></p>
+
 <hr>
 <h1>User Experience(UX)</h1>
 <h2>Target Audience</h2>
@@ -122,8 +137,9 @@ Font Weights: 600, 700 </li></ul></p>
 <h2>Future Features</h2>
 <p><li>A scoreboard system (local storage) to keep how many wins you can get in a row</li>
 <li>A best of 3, 5, 7 option</li>
+<li>Implement a step in between human choice and computer, with some fancier animations to display winner</li>
 <li>Ability to play against another human player online</li>
-<li>More interactive content/images when a winner of a round is decided</li>
+<li>More interactive content/images when a winner of a round is decided, with some more descriptive copy. i.e. Scissors decapitates Lizard, as per the show</li>
 <li>Day Mode which changes colour palette of game</li></p>
 <hr>
 <h1>Technologies</h1>
@@ -135,7 +151,9 @@ Font Weights: 600, 700 </li></ul></p>
 <li><a href="https://fonts.google.com" target="_blank">GoogleFonts</a> - Google Fonts was used to style the font for the project</li>
 <li><a href="https://coolors.co/1f3756-141539-ffffff-606e85" target="_blank">Coolers</a>- for colour palette</li>
 <li><a href="http://ami.responsivedesign.is/" target="_blank">Am I responsive design website</a> - for the preview images across different devices</li>
-<li><a href="https://www.frontendmentor.io/challenges/rock-paper-scissors-game-pTgwgvgH"  target="_blank">Frontend Mentor</a> - for the challenge, providing icon assets and wireframe for the game</li></p>
+<li><a href="https://www.frontendmentor.io/challenges/rock-paper-scissors-game-pTgwgvgH"  target="_blank">Frontend Mentor</a> - for the challenge, providing icon assets and wireframe for the game</li>
+<li><a href="https://vercel.com/"  target="_blank">Vercel</a> - website hosting service, which is simple to set up and connect to Github.</li>
+</p>
 <hr>
 <h1>Testing</h1>
 
@@ -227,5 +245,31 @@ Further information and troubleshooting on cloning a repository from Github can 
 </p>
 <hr>
 <h1>Credits</h1>
-<p>TBC</p>
+<p>All of the text written in this project has been written by the developer.</p>
+<h2>Media/Content</h2>
+<p>
+<ul>
+<li><a href="https://www.frontendmentor.io/" target="_blank">Frontend Mentor</a> is a website which sets challenges that allow you to improve your skills in a real-life workflow. The UX wireframes and image assets were provided by the website to create the game.</li>
+<li><a href="https://www.instagram.com/bigbangtheory/" target="_blank">The Big Bang Theory</a> - inspiration for the game itself and the youtube clip</li>
+</ul>
+
+<h2>Code</h2>
+<p>The following literature and tutorials assisted me in writing code:</p>
+<ul>
+<li><a href="https://veerasundar.com/rock-paper-scissor-lizard-spoc/">Rock Paper Scissor Lizard Spoc - Made by Veera</a> - introduced me to data attributes</li>
+<li><a href="hhttps://medium.com/@luke_smaki/javascript-es6-classes-8a34b0a6720a">JavaScript ES6: Classes article by Luke Ruokaismaki</a> - OOP in JavaScript with ES6. Introduced Classes in Javascript</li>
+<li><a href="https://medium.com/@zac_heisey/7-alternatives-to-the-div-html-tag-7c888c7b5036">7 Alternatives to the 'div' HTML Tag< by Zac Heisey</a> - Helped resolve a Main class issue when I was using it multiple times</li>
+<li><a href="https://css-tricks.com/a-complete-guide-to-data-attributes/">A Complete Guide to Data Attributes by Chris Coyier</a> - A guide which helped me understand styling with data attributes</li>
+<li><a href="https://css-tricks.com/a-complete-guide-to-calc-in-css/">A Complete Guide to calc() in CSS by Chris Coyier</a> - A guide which helped me understand styling using calc()</li>
+<li><a href="https://www.youtube.com/watch?v=lV2BMXdsDmc">How to code Rock, Paper, Scissors, Lizard and Spoke in Javascript by Competent Programming</a> - helped give me tips on struture and some of the functions I may need in my own game.</li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector">MDN Web Docs</a> - website which helped me to look up functions</li>
+<li><a href="https://codeinstitute.net/">Code Institute</a> - a great learning platform that has helped me get to this point</li>
+</ul>
+<h2>Acknowledgements</h2>
+<p>Thanks and sincere appreciation to:
+<ul>
+<li>Mentor Chris Quinn whose experience, advice and suggestions enabled this developer to complete this task.</li>
+
+<li>Charles Murphy whose advice and explanations helped this developer move forward in this project with his expert source knowlegde.</li>
+</ul></p>
 <a href="#return-to-the-top" alt="Return to the top">RETURN TO THE TOP</a>
