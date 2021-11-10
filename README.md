@@ -226,7 +226,7 @@ The problem was that the 'main' tag was used twice within a section tag. I resol
 <h2>Vercel</h2>
 <p>There are a number of ways to host your project for free. I used <a href="https://vercel.com/" target="_blank">Vercel</a> as it's an amazing service and extremely simple to get set up with. If you'd like to use Vercel, here are some steps to follow to get started:
 <ol>
-<li><a href="https://vercel.com/signup" target="_blank">Sign up to Vercel</a> and go through the onboarding flow, ensuring your GitHub account is connected by using their <a href="https://vercel.com/docs/v2/git-integrations/vercel-for-github" target="_blank">Vercel for GitHub</a> integration.</li>
+<li><a href="https://vercel.com/signup" target="_blank">Sign up to Vercel</a> and go through the onboarding flow, ensuring your GitHub account is connected by using their <a href="https://vercel.com/docs/concepts/git/vercel-for-gitlab" target="_blank">Vercel for GitHub</a> integration.</li>
 <li>Connect your project to Vercel from the <a href="https://vercel.com/import" target="_blank">"Import project" page, using the "From Git Repository" button and selecting the project you want to deploy.</li>
 <li>Once connected, every time you <code>git push</code>, Vercel will create a new <a href="https://vercel.com/docs/v2/platform/deployments" target="_blank">deployment</a> and the deployment URL will be shown on your <a href="https://vercel.com/dashboard" target="_blank">Dashboard</a>. You will also receive an email for each deployment with the URL.</li>
 </ol>
