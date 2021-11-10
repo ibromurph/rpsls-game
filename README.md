@@ -209,8 +209,15 @@ Checked that buttons and fields are large enough to click but still fit on the s
       <td>	&#65794;</td>
   </tr>
   </table>
+  <p>If I had more time, I would have liked to have done more user testing, especially against the user stories defined above. I was only able to get family members (new users) to test, and no issues were found.</p>
 <h2>Bugs & Fixes</h2>
-<p>TBC</p>
+<p>
+<ol>
+<li>FIXED -- JS syntax error. Page was not loading. class Player in JavaScript. <br>Used Chrome DevTools console to see state of page. The user and computer class were 'undefined', so had to move the class Player definition above the initiation.</li>
+<li>FIXED -- gameOver text and play again button was not being removed after first game had been completed. Used Chrome DevTools console to see state of page. The issue was that the resetGame function did not initially include the adding of the 'hidden' class on the playAgainButton and gameOverText function call</li>
+<li></li>
+</ol>
+</p>
 <hr>
 <h1>Deployment</h1>
 <h2>Vercel</h2>
