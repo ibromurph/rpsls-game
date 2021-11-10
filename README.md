@@ -136,10 +136,11 @@ Font Weights: 600, 700 </li></ul></p>
 </ul></p>
 <h2>Future Features</h2>
 <p><li>A scoreboard system (local storage) to keep how many wins you can get in a row</li>
-<li>A best of 3, 5, 7 option</li>
+<li>A best of 3, 5, 7 option on the landing page, with the ability to set a winning score per game</li>
 <li>Implement a step in between human choice and computer, with some fancier animations to display winner</li>
 <li>Ability to play against another human player online</li>
 <li>More interactive content/images when a winner of a round is decided, with some more descriptive copy. i.e. Scissors decapitates Lizard, as per the show</li>
+<li>A timing element to animations transitions</li>
 <li>Day Mode which changes colour palette of game</li></p>
 <hr>
 <h1>Technologies</h1>
@@ -213,9 +214,11 @@ Checked that buttons and fields are large enough to click but still fit on the s
 <h2>Bugs & Fixes</h2>
 <p>
 <ol>
-<li>FIXED -- JS syntax error. Page was not loading. class Player in JavaScript. <br>Used Chrome DevTools console to see state of page. The user and computer class were 'undefined', so had to move the class Player definition above the initiation.</li>
-<li>FIXED -- gameOver text and play again button was not being removed after first game had been completed. Used Chrome DevTools console to see state of page. The issue was that the resetGame function did not initially include the adding of the 'hidden' class on the playAgainButton and gameOverText function call</li>
-<li></li>
+<li>FIXED -- JS syntax error. The page was not loading. class Player in JavaScript. <br>Used Chrome DevTools console to see state of page. The user and computer class were 'undefined', so had to move the class Player definition above the initiation.</li>
+<li>FIXED -- gameOver text and play again button was not being removed after first game had been completed.<br> Used Chrome DevTools console to see state of page. The issue was that the resetGame function did not initially include the adding of the 'hidden' class on the playAgainButton and gameOverText function call</li>
+<li>FIXED -- "main" html tag was throwing up an error in the html validator.<br>
+The problem was that the 'main' tag was used twice within a section tag. I resolved this by swapping the two main tags to section tags, and swapping the section tag to main.
+ </li>
 </ol>
 </p>
 <hr>
