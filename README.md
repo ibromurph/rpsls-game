@@ -142,52 +142,89 @@ Font Weights: 600, 700 </li></ul></p>
 <h2>Validator testing</h2>
 <p>
 <a href="https://validator.w3.org/" target="_blank">HTML Validator</a><br>
-The HTML has been tested with the HTML W3 validator and <a href="" target="_blank">passed</a> with no errors. Only one warning surrounding heading order.<br><br>
+The HTML has been tested with the HTML W3 validator and <a href="assets/images/testing/HTML pass.png" target="_blank">passed</a> with no errors. Only one warning surrounding headings order.<br><br>
 
 <a href="https://jigsaw.w3.org/css-validator/" target="_blank">W3C CSS validator</a><br>
-The CSS has been tested with the W3C CSS validated and <a href="" target="_blank">passed</a> with no errors.<br><br>
+The CSS has been tested with the W3C CSS validated and <a href="assets/images/testing/CSS Pass.png" target="_blank">passed</a> with no errors.<br><br>
 
 <a href="https://jshint.com/" target="_blank">JS Hint</a><br>
-The game JS file has been passed through JSHint and does not show any errors.
+The game JS file has been passed through JSHint and <a href="assets/images/testing/JS Hint.png" target="_blank">does not show any errors</a>.
 
-Chrome Dev Tools - Lighthouse
-For running the lighthouse tests, I used an incognito window to avoid any errors and issues that could be caused by any of my Chrome extensions.
-<h2>Tests</h2>
+<a href="https://developers.google.com/web/tools/lighthouse" target="_blank">Chrome Dev Tools - Lighthouse</a><br>
+For running the lighthouse tests, I used an incognito window to avoid any errors and issues that could be caused by any of my Chrome extensions. The initial results raised 2 minor issues surrounding a <a href="assets/images/testing/Cross-origin.png" target="_blank">rel="noreferrer" attribute</a> on the 'About the game' CTA (as it was linking off to YouTube). It also raised a small issue on the <a href="assets/images/testing/robots.png" target="_blank">lack of a robots.txt file</a> (for search engines). After resolving these two issues, the game application <a href="assets/images/testing/lighthouse.png" target="_blank">scored 100 across all verticals</a>.
+
+
+
+<h2>Device tests</h2>
+<p>Testing across the following browsers/devices:</p>
+<ul>
+<li>Checked the size and placement of the icons on all device screen sizes</li><li>
+Confirmed that font size is legible on all screen sizes, especially small and medium screens</li><li>
+Checked that buttons and fields are large enough to click but still fit on the screen comfortably</li>
+<li>Checked that everything is displayed centrally and fits within the height of the screen.</li>
+<li>Checked that the rules buttons could open and close easily.</li>
+<li>Checked that the icons </li>
+</ul>
 <table>
   <tr>
-    <th>Screen size</th>
+    <th>Screen v Browser</th>
     <th>Chrome </th>
     <th>Brave</th>
       <th>Firefox</th>
   </tr>
   <tr>
     <td>Mobile</td>
-    <td>Tick</td>
-    <td>Tick</td>
-      <td>Not tested</td>
+    <td>	&#10003;</td>
+    <td>	&#10003;</td>
+      <td>	&#65794;</td>
   </tr>
   <tr>
     <td>Desktop</td>
-    <td>Tick</td>
-    <td>Tick</td>
-      <td>Tick</td>
+    <td>	&#10003;</td>
+    <td>	&#10003;</td>
+      <td>	&#10003;</td>
   </tr>
   <tr>
     <td>Tablet</td>
-    <td>Not tested</td>
-    <td>Not tested</td>
-      <td>Not tested</td>
+    <td>	&#10003;</td>
+    <td>	&#65794;</td>
+      <td>	&#65794;</td>
   </tr>
+  </table>
 <h2>Bugs & Fixes</h2>
 <p>TBC</p>
 <hr>
 <h1>Deployment</h1>
-<h2>GitHub Pages</h2>
-<p>TBC</p>
+<h2>Vercel</h2>
+<p>There are a number of ways to host your project for free. I used <a href="https://vercel.com/" target="_blank">Vercel</a> as it's an amazing service and extremely simple to get set up with. If you'd like to use Vercel, here are some steps to follow to get started:
+<ol>
+<li><a href="https://vercel.com/signup" target="_blank">Sign up to Vercel</a> and go through the onboarding flow, ensuring your GitHub account is connected by using their <a href="https://vercel.com/docs/v2/git-integrations/vercel-for-github" target="_blank">Vercel for GitHub</a> integration.</li>
+<li>Connect your project to Vercel from the <a href="https://vercel.com/import" target="_blank">"Import project" page, using the "From Git Repository" button and selecting the project you want to deploy.</li>
+<li>Once connected, every time you <code>git push</code>, Vercel will create a new <a href="https://vercel.com/docs/v2/platform/deployments" target="_blank">deployment</a> and the deployment URL will be shown on your <a href="https://vercel.com/dashboard" target="_blank">Dashboard</a>. You will also receive an email for each deployment with the URL.</li>
+</ol>
+</p>
 <h2>Forking Repository</h2>
-<p>TBC</p>
+<p>Forking the GitHub Repository makes a copy of the original repository so that you can view and/or make changes without affecting the original repository. To do this:</p>
+<ol>
+<li>Go to <a href="https://github.com/" target="_blank">Github</a> and log in.</li>
+<li>Locate the repository - follow this link for the <a href="https://github.com/ibromurph/rpsls-game" target="_blank">Rock, Paper, Scissor, Lizard, Spock repository</a></li>
+<li>Above the <b>Settings</b> button on the menu, on the right-hand side locate the <b>Fork</b> Button. It is next to the star button.</li>
+<li>You should now have a copy of the original repository in your GitHub account.</li>
+</ol>
 <h2>Cloning the project</h2>
-<p>TBC</p>
+<p>To clone from Github:
+<ol>
+<li>Go to <a href="https://github.com/" target="_blank">Github</a> and log in.</li>
+<li>Locate the repository - follow this link for the <a href="https://github.com/ibromurph/rpsls-game" target="_blank">Rock, Paper, Scissor, Lizard, Spock repository</a></li>
+<li>Under the repository name, click the green <b>Clone or download</b> button.</li>
+<li>To clone the repository using HTTPS, copy the link under <b>Clone with HTTPS.</b></li>
+<li>Open a terminal and if you need to, change the current working directory to the location where you want the cloned directory to be made.</li>
+<li>Type <code>git clone</code>, and then paste the URL you copied in Step 3 on GitHub.</li>
+<br><code>$ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY`</code>
+<li>When you press Enter, your local clone will be created</li>
+</ol>
+Further information and troubleshooting on cloning a repository from Github can be found on <a href="https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository" target="_blank">GitHub Docs</a>.
+</p>
 <hr>
 <h1>Credits</h1>
 <p>TBC</p>

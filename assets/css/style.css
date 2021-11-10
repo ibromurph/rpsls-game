@@ -120,6 +120,7 @@ body {
 .btn--rules {
   justify-self: flex-end;
   align-self: flex-end;
+  z-index: 1;
 }
 
 /* SCORE STYLES SECTION */
